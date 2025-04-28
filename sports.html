@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Club Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background-color: #f0f0f0;
+      color: #333;  
+    }
+    header {
+      background: #ad0079;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #003580;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('barca.jpeg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Strong glow with dark sharp edges */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, 
+    rgba(0, 204, 255, 0.6) 0%, 
+    rgba(0, 255, 208, 0.4) 40%, 
+    rgba(0, 0, 0, 0.9) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  border-radius: 50%;
+  animation: glow 6s infinite alternate;
+  z-index: 0;
+}
+
+/* Small moving glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, 
+    rgba(0, 200, 255, 0.5) 0%, 
+    rgba(0, 0, 0, 0.8) 70%);
+  top: 70%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  filter: blur(90px);
+  border-radius: 50%;
+  animation: smallGlowMove 8s infinite alternate;
+  z-index: 0;
+}
+
+/* Particle grid layer */
+.hero .particles {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveParticles 60s linear infinite;
+  z-index: 0;
+}
+
+/* Main Text */
+.hero h1 {
+  font-size: 60px;
+  color: white;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+  margin-bottom: 15px;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 22px;
+  color: #e0f7fa;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+/* Button */
+.hero button {
+  padding: 12px 30px;
+  background: #ffffff;
+  color: #004aad;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.hero button:hover {
+  background: #e0e0e0;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.hero button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+/* Animations */
+@keyframes glow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes smallGlowMove {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-60%, -40%) scale(1.2);
+  }
+}
+
+@keyframes moveParticles {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50px, -50px);
+  }
+}
+
+
+    
+    .about {
+      padding: 40px;
+      text-align: center;
+    }
+    .about h2 {
+      margin-bottom: 20px;
+      color: #004aad;
+    }
+    .about p {
+      font-size: 18px;
+      color: #333;
+      max-width: 800px;
+      margin: auto;
+    }
+    .footer {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #004aad;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Champion Sports Club</h1>
+  <p>Where Legends are Made</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#contact">Join Us</a>
+</nav>
+
+<section class="hero">
+    <div class="particles"></div>
+    <h1>Welcome to Our Sports Club</h1>
+    <p>Join us for fitness, passion, and excellence!</p>
+    <button>Join Now</button></section>
+
+<section id="about" class="about">
+  <h2>About Champion Sports Club</h2>
+  <p>
+    We are a premier sports organization nurturing young talents across various sports like Football, Basketball, Cricket, and Hockey. Our mission is to foster sportsmanship, teamwork, and leadership among youth while building a community of champions.
+  </p>
+</section>
+
+<footer class="footer" id="contact">
+  <p>Contact us: championsports@email.com | +91-9876543210</p>
+  <p>© 2025 Champion Sports Club. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
